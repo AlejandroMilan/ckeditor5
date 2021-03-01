@@ -33,4 +33,8 @@ export default class InsertImage extends Plugin {
             return view;
         } );
     }
+
+    log() {
+	    console.log("Hello world")
+    }
 }
