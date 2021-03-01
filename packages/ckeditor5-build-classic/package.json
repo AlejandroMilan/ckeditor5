@@ -71,6 +71,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "dev": "webpack --mode development",
     "preversion": "npm run build"
   }
 }
