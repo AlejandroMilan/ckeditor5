@@ -13,7 +13,7 @@ const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
-module.exports = {
+module.exports = [{
 	devtool: 'source-map',
 	performance: { hints: false },
 
@@ -88,4 +88,33 @@ module.exports = {
 			}
 		]
 	}
-};
+},
+
+{
+	entry: path.resolve( __dirname, 'src', 'imageplugin.js' ),
+  
+          output: {
+                  // The name under which the editor will be exported.
+                  library: 'InsertImage',
+  
+                  path: path.resolve( __dirname, 'build' ),
+                  filename: 'imageplugin.js',
+                  libraryTarget: 'umd',
+                  libraryExport: 'default'
+          },
+
+	module: {
+                  rules: [
+                          {
+                                  test: /\.svg$/,
+                                  use: [ 'raw-loader' ]
+                          },
+                          {
+                                  test: /\.css$/,
+                                  use: ["style-loader", "css-loader"]
+                          }
+                  ]
+          }
+}
+
+];
