@@ -95,9 +95,6 @@ ClassicEditor.defaultConfig = {
 			'alignRight'
 		],
 		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
 			'imageStyle:alignLeft',
 			'imageStyle:alignCenter',
 			'imageStyle:alignRight',
@@ -113,5 +110,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'es'
 };
