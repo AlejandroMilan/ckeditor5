@@ -6,7 +6,6 @@ import imageIcon from '@ckeditor/ckeditor5-core/theme/icons/image.svg';
 export default class InsertImage extends Plugin {
     init() {
         const editor = this.editor;
-	this.isOpen = false
 
         editor.ui.componentFactory.add( 'insertImage', locale => {
             const view = new ButtonView( locale );
@@ -19,15 +18,10 @@ export default class InsertImage extends Plugin {
 
             // Callback executed once the image is clicked.
             view.on( 'execute', () => {
-		this.isOpen = true
-		this.log()
+		    console.log('Action clicked')
             } );
 
             return view;
         } );
-    }
-
-    log() {
-	    console.log(this.isOpen)
     }
 }
