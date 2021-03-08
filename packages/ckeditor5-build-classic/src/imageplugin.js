@@ -18,7 +18,14 @@ export default class InsertImage extends Plugin {
 
             // Callback executed once the image is clicked.
             view.on( 'execute', () => {
-		    console.log('Action clicked')
+		editor.model.change( writer => {
+                    const imageElement = writer.createElement( 'image', {
+                        src: ""
+                    } );
+
+                    // Insert the image in the current selection location.
+                    editor.model.insertContent( imageElement, editor.model.document.selection );
+                } );
             } );
 
             return view;
